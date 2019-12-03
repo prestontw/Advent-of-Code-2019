@@ -1,4 +1,4 @@
-use advent_of_code_2019::fuel_for_module;
+use advent_of_code_2019::*;
 fn main() {
     let input: Vec<usize> = vec![
         86608, 97271, 51200, 149104, 86406, 97844, 74380, 125817, 56605, 125891, 63835, 131033,
@@ -11,6 +11,13 @@ fn main() {
         90802, 147235, 91776, 76203, 67766, 68173, 103707, 54682, 145674, 135349, 58766, 92270,
         126388, 111236, 69184, 66915, 117342,
     ];
-    let result: usize = input.into_iter().map(fuel_for_module).sum();
+    let result: usize = input.iter().cloned().map(fuel_for_module).sum();
+    println!("{}", result);
+    let result: usize = input
+        .iter()
+        .cloned()
+        .map(fuel_for_fuel_for_module)
+        .map(|s| s.unwrap_or(0))
+        .sum();
     println!("{}", result);
 }
