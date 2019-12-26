@@ -14,7 +14,7 @@ fn main() {
   input1[2] = 2;
   println!(
     "{}",
-    advent_of_code_2019::interpret_intcode_program(&input1)
+    advent_of_code_2019::day2::interpret_intcode_program(&input1)
   );
-  println!("{}", advent_of_code_2019::find_noun_verb(&input));
+  println!("{}", advent_of_code_2019::day2::find_noun_verb(&input));
 }
