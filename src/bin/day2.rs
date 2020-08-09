@@ -1,3 +1,4 @@
+use advent_of_code_2019::IntcodeInterpreter;
 fn main() {
   let input = vec![
     1, 0, 0, 3, 1, 1, 2, 3, 1, 3, 4, 3, 1, 5, 0, 3, 2, 1, 10, 19, 1, 19, 5, 23, 2, 23, 9, 27, 1, 5,
@@ -12,9 +13,6 @@ fn main() {
   let mut input1 = input.clone();
   input1[1] = 12;
   input1[2] = 2;
-  println!(
-    "{}",
-    advent_of_code_2019::day2::interpret_intcode_program(&input1)
-  );
-  println!("{}", advent_of_code_2019::day2::find_noun_verb(&input));
+  println!("{}", IntcodeInterpreter::interpret_intcode_program(&input1));
+  println!("{}", IntcodeInterpreter::find_noun_verb(&input));
 }

@@ -1,4 +1,3 @@
-use advent_of_code_2019::day1::*;
 fn main() {
   let input: Vec<usize> = vec![
     86608, 97271, 51200, 149104, 86406, 97844, 74380, 125817, 56605, 125891, 63835, 131033, 142276,
@@ -20,4 +19,16 @@ fn main() {
     .map(|s| s.unwrap_or(0))
     .sum();
   println!("{}", result);
+}
+fn fuel_for_module(u: usize) -> usize {
+  (u / 3) - 2
+}
+
+fn fuel_for_fuel_for_module(u: usize) -> Option<usize> {
+  if u > 8 {
+    let fuel = fuel_for_module(u);
+    Some(fuel + fuel_for_fuel_for_module(fuel).unwrap_or(0))
+  } else {
+    None
+  }
 }
